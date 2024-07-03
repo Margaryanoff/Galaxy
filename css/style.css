@@ -1,0 +1,80 @@
+@import url(./Reset.css);
+body {
+    background: black;
+}
+
+.sun{
+    position: absolute;
+    top: 265px;
+    left: 280px;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-image: url(../images/download-1.jpg);
+    background-position: center;
+    background-size: 180%;
+    box-shadow: 0 0 15px #fff;
+    animation: orbit 60s linear infinite;
+}
+.earth, .moon{
+    position: absolute;
+    border-top:solid ;
+    border-color: white transparent;
+    border-width: 1px;
+    border-radius: 50%;
+}
+.earth{
+    top: 150px;
+    left: 150px;
+    width: 400px;
+    height: 400px;
+    animation: orbit 36s linear infinite;
+}
+.moon{
+    top: 110px;
+    right: -55px;
+    width: 120px;
+    height: 120px;
+    animation: moon 3s linear infinite;
+}
+.moon::before{
+    content: '';
+    background-position: center;
+    background-size: 120%;
+    background-image:url(../images/png-transparent-moon-moon-atmosphere-monochrome-sphere-thumbnail.png);
+    top: 24px;
+    right: -10px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    position: absolute;
+    animation: moon 3s linear infinite;
+}
+.earth::before{
+    content: '';
+    top: 141px;
+    right: -22px;
+    border-radius: 50%;
+    width: 50px;
+    height:50px;
+    background: url(../images/earth-globe-global-warming-world-earth-png.jpg);
+    background-size: 120%;
+    background-position: center;
+    position: absolute;
+    animation: spin 7s linear infinite;
+}
+ @keyframes spin {
+    100%{
+        rotate: 360deg;
+    }
+ }
+ @keyframes orbit {
+    to{
+        transform: rotate(360deg);
+    }
+ }
+ @keyframes moon {
+    to{
+        rotate: 360deg;
+    }
+ }
